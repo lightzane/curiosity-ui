@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/curiosity-ui",
+            "outputPath": "./../curiosity-api/public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -95,7 +95,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "karma.conf.js",
+            "codeCoverage": true
           }
         }
       }

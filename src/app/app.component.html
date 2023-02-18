@@ -1,12 +1,34 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div class="container">
-    <span class="app-title">Curiosity</span>
-  </div>
-</mat-toolbar>
+<app-toolbar
+  [title]="title"
+  *ngIf="(isLoggedIn$ | async)"
+  (onMenuClick)="sidenav.toggle()"
+></app-toolbar>
 
-<div class="container mt-5">
-  Content here...
-</div>
+<mat-sidenav-container class="app-body h-100">
+
+  <!-- Sidenav -->
+  <mat-sidenav
+    [style.width]="isHandset ? '85vw' : '40vh'"
+    #sidenav
+    opened="false"
+    [mode]="isHandset ? 'over' : 'side'"
+    fixedInViewport
+  >
+    <div *ngIf="(isLoggedIn$ | async)" class="container-fluid mt-5 pt-3 h-75">
+      <app-sidenav 
+        (onLogout)="logout(sidenav)"
+        (onWriteCuriosity)="write($event)"
+        (onNavChange)="navChange(sidenav)"
+      ></app-sidenav>
+    </div>
+  </mat-sidenav>
+
+  <!-- Content -->
+  <mat-sidenav-content class="h-100 pt-3" [class.mt-5]="(isLoggedIn$ | async)">
+    <div class="container mt-5">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

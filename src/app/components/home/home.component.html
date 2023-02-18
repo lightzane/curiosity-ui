@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+
+    <div class="col-md-6 col-12 mb-5 pb-5">
+
+        <app-post 
+            *ngFor="let curiosity of curiosities"
+            [curiosity]="curiosity" 
+            [profile]="profile"
+        ></app-post>
+
+    </div>
+
+</div>

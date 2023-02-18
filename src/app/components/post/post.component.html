@@ -1,0 +1,39 @@
+<mat-card class="post-wrapper mb-3" *ngIf="curiosity">
+
+    <div class="container mt-3">
+        <p class="d-flex justify-content-between">
+            <span>{{ curiosity.createdBy }}</span>
+            <span class="dateago">{{ curiosity.createdTs | dateAgo }}</span>
+        </p>
+    </div>
+
+    <mat-card-content class="question-wrapper">
+
+        <div class="question-container">{{ curiosity.question }}</div>
+
+    </mat-card-content>
+
+    <div *ngIf="isRead" class="container mt-3 pt-2 w-75 rounded text-center" @fadeIn>
+        <p cy="lbl-answer">{{ curiosity.answer }}</p>
+    </div>
+
+    <mat-card-actions class="justify-content-between">
+
+        <div>
+            <button mat-icon-button color="accent" (click)="favorite()" cy="btn-favorite">
+                <mat-icon [class.material-symbols-outlined]="!isFavorite">favorite</mat-icon>
+            </button>
+    
+            <button mat-icon-button color="primary" (click)="read()" cy="btn-read" *ngIf="!isRead">
+                <mat-icon class="material-symbols-outlined">visibility</mat-icon>
+            </button>
+        </div>
+
+        <div class="me-2">
+            <span class="me-2" cy="lbl-likes">{{ (curiosity.favorites.length | views) || '0' }} likes</span>
+            <span cy="lbl-views">{{ (curiosity.views | views) || '0' }} views</span>
+        </div>
+
+    </mat-card-actions>
+
+</mat-card>

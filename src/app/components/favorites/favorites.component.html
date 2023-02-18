@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+
+    <div class="col-md-6 col-12 mb-5 pb-5">
+
+        <ng-container
+            *ngIf="curiosities.length; else emptyTemplate"
+            [ngTemplateOutlet]="listTemplate"
+        ></ng-container>
+
+    </div>
+
+</div>
+
+
+
+<ng-template #listTemplate>
+    <app-post 
+        *ngFor="let curiosity of curiosities"
+        [curiosity]="curiosity" 
+        [profile]="profile"
+    ></app-post>
+</ng-template>
+
+
+
+<ng-template #emptyTemplate>
+    <mat-card>
+        <mat-card-content>
+            <p cy="lbl-no-favorite">You have no favorites</p>
+        </mat-card-content>
+    </mat-card>
+</ng-template>

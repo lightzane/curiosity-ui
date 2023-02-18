@@ -1,0 +1,23 @@
+.post-wrapper {
+    overflow: hidden;
+}
+
+.question-wrapper {
+    background-color: skyblue;
+}
+
+.question-container {
+    text-align: center;
+    color: #fff;
+    background-color: skyblue;
+    font-size: 2.5rem;
+    font-weight: 400;
+    border-radius: .3rem;
+    font-family: 'Concert One', cursive;
+    padding: 1rem;
+    cursor: default;
+    
+    @media (max-width: 599.98px) and (orientation: portrait), (max-width: 959.98px) and (orientation: landscape) {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,60 @@
+<h1 class="pacifico">Curiosity</h1>
+<div class="row justify-content-center">
+    <div class="col-md-4 col-12">
+        <ng-container [ngTemplateOutlet]="formTemplate"></ng-container>
+    </div>
+</div>
+
+<ng-template #formTemplate>
+    <form [formGroup]="loginForm" class="mt-5 text-center">
+        <mat-card class="py-3">
+            <mat-card-content>
+    
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" formControlName="username" cy="txt-username">
+                <mat-icon matSuffix>person</mat-icon>
+                <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password" type="password" cy="txt-password">
+                <mat-icon matSuffix>key</mat-icon>
+                <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+            </p>
+    
+            </mat-card-content>
+    
+            <mat-card-actions class="justify-content-around">
+    
+                <button
+                    mat-flat-button
+                    color="primary"
+                    (click)="login()"
+                    [disabled]="loginForm.invalid"
+                    type="submit"
+                    cy="btn-login"
+                >
+                    Login
+                </button>
+    
+                <button
+                    mat-flat-button
+                    color="accent"
+                    (click)="register()"
+                    [disabled]="loginForm.invalid"
+                    type="button"
+                    cy="btn-register"
+                >
+                    Register
+                </button>
+    
+            </mat-card-actions>
+    
+        </mat-card>
+    </form>
+</ng-template>

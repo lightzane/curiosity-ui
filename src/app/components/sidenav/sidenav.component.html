@@ -1,0 +1,38 @@
+<div class="container-fluid mt-3 h-100">
+    <div class="d-flex flex-column justify-content-between h-100">
+
+        <div class="container-fluid">
+            <div cy="lbl-username">Hello {{ profile?.username }}</div>
+            <ng-container [ngTemplateOutlet]="navlinks"></ng-container>
+        </div>
+
+        <footer>
+            <button mat-flat-button color="accent" (click)="logout()" cy="btn-logout">
+                <mat-icon class="me-1">logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </footer>
+
+    </div>
+</div>
+
+<ng-template #navlinks>
+    <ul class="navlinks">
+
+        <li [routerLink]="['/home']" routerLinkActive="active" matRipple cy="nav-home" (click)="navChange()">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </li>
+
+        <li matRipple (click)="openWriteDialog()" cy="nav-write">
+            <mat-icon>edit</mat-icon>
+            <span>Write</span>
+        </li>
+
+        <li [routerLink]="['/favorites']" routerLinkActive="active" matRipple cy="nav-favorites" (click)="navChange()">
+            <mat-icon>favorite</mat-icon>
+            <span>Favorites</span>
+        </li>
+
+    </ul>
+</ng-template>

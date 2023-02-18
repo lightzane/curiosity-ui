@@ -1,0 +1,24 @@
+.navlinks {
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        transition: 500ms ease-out;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        border-radius: 4rem;
+        padding: 1rem;
+
+        span {
+            margin-left: 1rem;
+        }
+
+        &.active {
+            background-color: var(--mat-primary);
+            color: #fff;
+        }
+    }
+}
