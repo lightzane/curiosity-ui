@@ -1,27 +1,34 @@
 # Curiosity UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+This project is also created for unit test practice with Jasmine.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. `npm install`
+2. `npm test`
 
-## Code scaffolding
+And try to fix, add and cover more unit test!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Note
 
-## Build
+At Angular 15, `karma.conf.js` is not automatically generated. Run the command below
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npx ng g config karma
+```
 
-## Running unit tests
+And add `codeCoverage: true` in **angular.json** > **projects** > **<app_name>** > **architect** > **test** > **options**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Others
 
-## Running end-to-end tests
+### Cypress Automation Test
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+https://github.com/lightzane/curiosity-test
 
-## Further help
+### Jasmine Unit Test
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://github.com/lightzane/curiosity-ui
+
+### Jest Unit Test
+
+https://github.com/lightzane/curiosity-api
